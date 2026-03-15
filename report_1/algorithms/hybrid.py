@@ -1,3 +1,4 @@
+from .binet import binet_multiply
 from .classical import classical_multiply
 
 
@@ -7,5 +8,4 @@ def hybrid_multiply(matrix_1, matrix_2, l_size=2):
     if n <= 2 ** l_size:
         return classical_multiply(matrix_1, matrix_2)
 
-    # TODO add binet_multiply
-    raise NotImplementedError()
+    raise binet_multiply(matrix_1, matrix_2)
