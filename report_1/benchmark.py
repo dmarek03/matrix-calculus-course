@@ -4,10 +4,15 @@ import numpy as np
 from numpy import floating
 
 from report_1.algorithms.hybrid import hybrid_multiply
-from report_1.utils.matrix_helpers import generate_matrix, check_multiplication_correctness
+from report_1.utils.matrix_helpers import (
+    generate_matrix,
+    check_multiplication_correctness,
+)
 
 
-def benchmark(sizes: list[int], repeats: int = 10, l_size: int = 2) -> tuple[list[floating], list[floating]]:
+def benchmark(
+    sizes: list[int], repeats: int = 10, l_size: int = 32
+) -> tuple[list[floating], list[floating]]:
 
     times = []
     ops_counts = []

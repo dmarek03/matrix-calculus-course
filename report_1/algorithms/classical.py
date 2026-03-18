@@ -1,6 +1,6 @@
-def classical_multiply(matrix_1, matrix_2):
+def classical_multiply(matrix_1, matrix_2) -> tuple[list[list[float]], int]:
     n = len(matrix_1)
-    result = [[0.0]*n for _ in range(n)]
+    result = [[0.0] * n for _ in range(n)]
     flops_cnt = 0
     for i in range(n):
         for j in range(n):
