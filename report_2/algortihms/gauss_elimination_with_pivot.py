@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def gauss_with_pivot(A_, b_):
     A = A_.copy()
     b = b_.copy()
@@ -14,15 +15,16 @@ def gauss_with_pivot(A_, b_):
         A[col, col:] /= pivot
         b[col] /= pivot
         if abs(pivot) < 1e-12:
-            raise ValueError(f"Macierz jest osobliwa lub bliska osobliwości (kolumna {col})")
-        for i in range(col+1, n):
+            raise ValueError(
+                f"Macierz jest osobliwa lub bliska osobliwości (kolumna {col})"
+            )
+        for i in range(col + 1, n):
             factor = A[i, col]
             A[i, col:] -= factor * A[col, col:]
-            b[i] -= factor * b[col]   
-        x = np.zeros(n)
+            b[i] -= factor * b[col]
 
-    for i in range(n-1, -1, -1):
-        x[i] = b[i] - np.dot(A[i, i+1:], x[i+1:])   
+    x = np.zeros(n)
+
+    for i in range(n - 1, -1, -1):
+        x[i] = b[i] - np.dot(A[i, i + 1 :], x[i + 1 :])
     return x
-
-
