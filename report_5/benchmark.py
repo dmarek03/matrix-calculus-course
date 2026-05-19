@@ -1,8 +1,7 @@
 import os
 import matplotlib.pyplot as plt
 import numpy as np
-from algorithms.power_method import power_method
-from utils.generate_matrix import generate_matrix
+
 
 
 def run_power_method_experiment(A_orig, epsilon=0.0001):
